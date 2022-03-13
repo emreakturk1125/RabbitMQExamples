@@ -1,0 +1,5 @@
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Publisher.Console\obj\Debug\netcoreapp3.1\RabbitMQ.Publisher.Console.csproj.AssemblyReference.cache
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Publisher.Console\obj\Debug\netcoreapp3.1\RabbitMQ.Publisher.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Publisher.Console\obj\Debug\netcoreapp3.1\RabbitMQ.Publisher.Console.AssemblyInfoInputs.cache
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Publisher.Console\obj\Debug\netcoreapp3.1\RabbitMQ.Publisher.Console.AssemblyInfo.cs
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Publisher.Console\obj\Debug\netcoreapp3.1\RabbitMQ.Publisher.Console.csproj.CoreCompileInputs.cache

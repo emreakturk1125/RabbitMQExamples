@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "t+avnc6QXJOMkUcheBwoAcdbgfJ1ws+4SpwWpjWV4WjNRpSRgT+WWOgNf+lWwKncaqCtpkb6mKy2fqqf2s/BYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\emre.akturk\\source\\repos\\RabbitMQExamples\\RabbitMQ.Subscriber.Console\\1RabbitMQ.Subscriber.Console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emre.akturk\\.nuget\\packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
+    "C:\\Users\\emre.akturk\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\emre.akturk\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

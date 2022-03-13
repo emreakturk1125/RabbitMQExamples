@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = RabbitMQ.Publisher.Console
+build_property.ProjectDir = C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Publisher.Console\

@@ -1,0 +1,142 @@
+
+                                       --------------------------------------------------
+                                       **************** RabbitMQ Kurulum ***************
+                                       ---------------------------------------------------
+-> Uygulamalarda RabbitMQ kütüphanesi olmalıdır
+-> RabbitMQ Cloud 
+-> Docker Container
+                                       -------------------------------------------------------
+                                     **************** Mesaj kuyruk sistemleri ****************
+                                     ---------------------------------------------------------
+-> RabbitMQ
+-> Azure Queue Storage 
+-> Azure Service Bus
+-> Kafka
+-> MSMQ
+
+                                       ---------------------------------------------------
+                                           **************** RabbitMQ ****************
+                                       ---------------------------------------------------
+
+-> RabbitMQ daki kuyruğa veriler byte dizisi olarak gönderilir
+-> Mesaj kuyruk sistemi
+-> Open Source
+-> AMQP Protocolünü kullanır
+-> Message Broker; Mesaj kuyruk sistemine verilen genel isimdir
+-> Dil bağımsız, tüm diller ile işlem yapılabilir
+
+                                       ----------------------------------------------------------
+                                       **************** RabbitMQ Nasıl Çalışır ****************
+                                       --------------------------------------------------------
+
+                                  -> queue -> Subscriber (Consumer) 
+Publisher(Producer)   -> Exchange -> queue -> Subscriber
+                                  -> queue -> Subscriber
+
+Publisher; Exchange'e ya da kuyruğa mesaj yollayan uygulamalardır.
+Exchange; Direk kuyruklara da gönderilebilir. Exchange (Rootlama) üzernden de kuyruklara mesaj gönderilebilir.
+Subscriber; RabbitMq dan İlgili kuyrukları dinleyen uygulamalardır
+
+                                       ------------------------------------------------------------------
+                                       **************** RabbitMQ Niçin Kullanmalıyız ****************
+                                       --------------------------------------------------------------
+
+-> Microservice mimarilerde asenkron iletişim sağlamak için
+-> Request, response sürelerini azaltmak
+-> Uzun süren işlemleri rabbitMQ ile ayrı bir process de gerçekleştirebiliriz.
+-> grpc iletişim yöntemidir.
+
+Ör;
+-----
+-> Bir uygulama da kullanıcı bir resim yükleyebilir. Bu resmi resize etmek gerekirse bu işlemi
+o anda yapmaya çalışırsak uzun sürebilir.
+-> Word dosyasını, pdf'e çevirme işlemleri olabilir
+
+                                       ----------------------------------------------------------------------------------------------
+                                         **************** RabbitMQ Publisher(Producer) tarafında Metod Açıklamaları ****************
+                                       -------------------------------------------------------------------------------------
+
+1.)   //channel.QueueDeclare("1", "2", "3", "4", "5");
+                // 1 -> queue       =>   Kuyruk adı
+                // 2 -> durable     =>   false : kuyruklar bellekte tutulur. restart atılırsa kuyrukla silinir,  true : restart atılsa dahi kuyruk kaybolmaz
+                // 3 -> exclusive   =>   true : sadece yukarda oluşturduğun (channel) kanal üzerinden bağlan demektir,  false : başka bir yerde oluşturduğun kanal üzerinden bağlan demektir
+                // 4 -> autoDelete  =>   kuyruğa bağlı olan son subscriber da bağlantısını koparırsa otomatik olarak kuyruğu sil demektir. true : otomatik silinsin, false : otomatik silinmesin
+
+2.)   // channel.BasicPublish("1","2","3","4")
+                // 1 -> exchage           => Arada Exchange kullanacaksa o belirtilir. Kullanılmayacaksa "string.Empty" yazılır, böylece publisherdan direk kuyruğa gönderilmiş olur buna da "default exchange" denir.
+                // 2 -> routingKey        => Kuyruk adı verilir
+                // 3 -> basicProperties   => ?
+                // 4 -> messageBody       => message verilir
+
+                                       ----------------------------------------------------------------------------------------------
+                                         **************** RabbitMQ Subscriber(Consumer) tarafında Metod Açıklamaları ****************
+                                       ----------------------------------------------------------------------------------------------
+
+
+1.)   // Subscriber(Consumer) kısmında alttaki kodu;
+                // Publisher'ın "hello-queue" kuyruğu oluşturduğuna emin isen kullanmayabilirsin
+                // Kullanmazsan  => Subscriber ı ayağa kaldırdığınızda böyle bir kuyruk yoksa hata alırsın
+                // Kullanırsan   => Böyle bir kuyruk yoksa Subscriber önce kuyruk oluşturur ve kuyrukta herhangibir hata almazsın
+                // Bu kodun olması daha iyi olur ve parametreler publisher da olduğu gibi aynı olmalıdır. Yoksa hata verir.
+                channel.QueueDeclare("hello-queue", true, false, false);
+
+                var consumer = new EventingBasicConsumer(channel);
+
+2.)  //channel.BasicQos(1, 2, 3)
+                // 1 -> prefetchSize      => 0 : herhamgibir boyuttaki mesajı gönderebilirsin demektir.
+                // 2 -> prefetchCount     => her bir subcriber'a kaç mesaj gelsin
+                // 3 -> global            => true : bütün subscriber'lara toplam "prefetchCount" değeri kadar mesaj gönderilecek, false : her bir subscriber'a "prefetchCount" değeri kadar mesaj gönderilecek, örneği 5 adet mesaj geldiyse kalanları memory den okuyacak
+                channel.BasicQos(0, 1, false);
+
+3.)   //channel.BasicConsume("1", "2", "3");
+                // 1 -> queue      => Okunacak kuyruk adı
+                // 2 -> autoAck    => true : RabbitMQ subscriber'a bir mesaj gönderdiğinde bu mesaj doğruda işlense yanlışta işlense sil demektir. false : Sen kuyruktaki mesajı silme ben sana haber edeceğim demektir. Normalde en uygunu false olmasıdır
+                // 3 -> consumer   => yukardaki consumer'ı ver
+                channel.BasicConsume("hello-queue", true, consumer);
+
+4.)    // += yazıp   tab + tab tıkladığında otomatik metod oluşur 
+                consumer.Received += Consumer_Received;
+
+                                       ------------------------------------------------------------- 
+                                            **************** Exchange Tipleri ****************
+                                       --------------------------------------------------------------
+
+-> Exchange kullanılmıyorsa "Default Exchange" dir
+
+1.) Fanout Exchange 
+
+->  Exchange'e bağlı tüm kuyruklara filtreleme yapmadan aynı mesajları yollar. 
+->  Consumer'lar kuyrukları kendisi oluşturur. Consumerlar düştüğü zaman kuyruklar silinir.
+->  Consumer'lar kuyruklara bağlanmaz ise mesajlar herhangibir yerde kaydedilmez ve silinir. Ör: Hava tahmini senaryosunda Saat başı hava tahmini gönderilirse eğer önceki bilgilerin bir önemi yoktur.
+
+2.) Direct Exchage 
+
+-> Direct Exchange; direk bir kuyruğu hedef alır. Route Name'ine göre o kuyruğa mesajları gönderir. Daha sonra bu kuyrukları dinleyen consumer'lar olabilir.
+-> Kuyrular publisher tarafında oluşturulacağı için, herhangibir consumer down olması durumunda kuyruklar silinmeyecek
+-> Consumer ilgili kuyruğa bağlanıp mesajı okudukça, ilgili mesajlar kuyruktan silinecek
+-> Aynı kuyruğa bağlı 2 instance varsa bir ona , bir diğeine mesajı gönderir
+
+3.) Topic Exchange  
+
+-> Burada kuyruğu consumer oluşturur.
+-> Gelen mesajı detaylı route a göre ilgili kuyruk'a yollar. Consumer nasıl bir data istiyorsa ona göre route key oluştursun ve kuyruğu okusun
+-> Detaylı routing işlemleri için
+-> String ifadeler nokta ile ayrılır.
+-> Ör : *.Error.*  içinde Error geçen kuyruklar
+-> Ör : #.Error  sonu Error ile biten kuyruklar
+-> Varyasyon çok olduğu için consumer nasıl bir data istiyorsa ona göre kuyruk oluşturur.
+
+4.) Header Exchange 
+
+-> route lama işlemleri header da yapılır
+
+                                       ------------------------------------------------------------- 
+                                            **************** Worker Service ****************
+                                       --------------------------------------------------------------
+
+-> Dış dünyaya ne bir servis açmaz, data göndermez. Tek görevi iş yapmaktır. 
+-> Özünde Console uygulamasıdır. Worker service console uygulamalarına göre daha yeteneklidir. Worker service ile;
+     1.) Hazır DI Container gelir.
+     2.) Hazır Logging yapısı
+     3.) Background Service yapısı
+     4.) Docker Container olarakta ayağa kaldırılabilir

@@ -1,0 +1,30 @@
+﻿@model List<UserFile>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<hr />
+
+<a class="btn btn-primary" asp-controller="Product" asp-action="CreateProductExcel">Excel Oluştur</a>
+
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>File Path</th>
+            <th>Created Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FileName</td>
+            <td>@item.FilePath</td>
+            <td>@item.CreatedDate</td>
+            <td>@item.FileStatus</td>
+        </tr>
+    }
+</table>

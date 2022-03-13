@@ -1,0 +1,12 @@
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\bin\Debug\net5.0\6RabbitMQ.Excel.Shared.deps.json
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\bin\Debug\net5.0\6RabbitMQ.Excel.Shared.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\bin\Debug\net5.0\ref\6RabbitMQ.Excel.Shared.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\bin\Debug\net5.0\6RabbitMQ.Excel.Shared.pdb
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\6RabbitMQ.Excel.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\6RabbitMQ.Excel.Shared.AssemblyInfoInputs.cache
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\6RabbitMQ.Excel.Shared.AssemblyInfo.cs
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\6RabbitMQ.Excel.Shared.csproj.CoreCompileInputs.cache
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\6RabbitMQ.Excel.Shared.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\ref\6RabbitMQ.Excel.Shared.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\6RabbitMQ.Excel.Shared.pdb
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\6RabbitMQ.Excel.Shared\obj\Debug\net5.0\6RabbitMQ.Excel.Shared.csproj.AssemblyReference.cache

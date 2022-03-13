@@ -1,0 +1,17 @@
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.exe
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.deps.json
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.runtimeconfig.json
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.runtimeconfig.dev.json
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\ref\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.pdb
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.AssemblyInfoInputs.cache
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.AssemblyInfo.cs
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.csproj.CoreCompileInputs.cache
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.csproj.CopyComplete
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\ref\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.dll
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.pdb
+C:\Users\emre.akturk\source\repos\RabbitMQExamples\RabbitMQ.Subscriber.Exchange.Example2.Console\obj\Debug\net5.0\RabbitMQ.Subscriber.FanoutExchange.Example2.Console.genruntimeconfig.cache
