@@ -140,3 +140,5 @@ o anda yapmaya çalışırsak uzun sürebilir.
      2.) Hazır Logging yapısı
      3.) Background Service yapısı
      4.) Docker Container olarakta ayağa kaldırılabilir
+
+     test amaçlı
